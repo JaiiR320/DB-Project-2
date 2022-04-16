@@ -11,26 +11,31 @@ public class Main {
         HashIndex table = new HashIndex();
         ArrayIndex array = new ArrayIndex();
 
-        array.get(1, 10);
-
-        table.get(100);
-
-        FullTable.scanEqual(100);
-
-        //FullTable.scanNotEq(100);
-
-        FullTable.scanRange(1, 10);
-
+        boolean indexed = false;
         while(true){
             System.out.print("> ");
             String line = scan.nextLine();
             String[] com = line.split("\\ ");
-            switch (com[0]) {
-                case "quit":
-                    scan.close();
-                    return;
-                default:
-                    break;
+            if(line.equals("CREATE INDEX ON Project2Dataset (RandomV)")){
+                System.out.println("The hash-based and array-based indexes are built successfully.\nProgram is ready and waiting for user command.");
+                indexed = true;
+            }
+            if(com[0].equals("SELECT")){
+                if (com[6].equals("=")) {
+                    if (indexed) {
+                        table.get(Integer.valueOf(com[7]));
+                    } else {
+                        FullTable.scanEqual(Integer.valueOf(com[7]));
+                    }
+                } else if (com[6].equals(">")) {
+                    if (indexed) {
+                        array.get(Integer.valueOf(com[7]), Integer.valueOf(com[11]));
+                    } else {
+                        FullTable.scanRange(Integer.valueOf(com[7]), Integer.valueOf(com[11]));
+                    }
+                } else if (com[6].equals("!=")){
+                    FullTable.scanNotEq(Integer.valueOf(com[7]));
+                }
             }
         }
     }
