@@ -1,9 +1,12 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * Main
  * main class that runs the CLI
+ * CREATE INDEX ON Project2Dataset (RandomV)
+ * SELECT * FROM Project2Dataset WHERE RandomV = v (7)
+ * SELECT * FROM Project2Dataset WHERE RandomV > v1 AND RandomV < v2 (7, 11)
+ * SELECT * FROM Project2Dataset WHERE RandomV != v (7)
  */
 public class Main {
     public static void main(String[] args) {
@@ -37,6 +40,7 @@ public class Main {
                     FullTable.scanNotEq(Integer.valueOf(com[7]));
                 }
             }
+            if(com[0].equals("quit")) return;
         }
     }
 

@@ -5,11 +5,13 @@ import java.util.ArrayList;
  */
 public class FullTable {
     static void scanEqual(int key){
+        int numScan = 0;
         Stopwatch stopwatch = new Stopwatch();
         ArrayList<Record> out = new ArrayList<>();
         Block b;
         for (int i = 1; i < 100; i++) {
             b = new Block("src/Project2Dataset/F" + i + ".txt");
+            numScan++;
             for (Record record : b.records) {
                 if (record.v == key) {
                     out.add(record);
@@ -18,7 +20,7 @@ public class FullTable {
         }
         System.out.print("Full Table equality Scan took ");
         stopwatch.elapsed();
-        System.out.println(out.size() + " blocks were scanned");
+        System.out.println(numScan + " blocks were scanned");
 
         for (Record record : out) {
             System.out.println(record.content);

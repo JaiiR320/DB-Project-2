@@ -9,21 +9,14 @@
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "Main",
-            "projectName": "DB Project 2_42adf507"
+            "projectName": "DB-Project-2_cdbd3915"
         },
         {
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "Main",
-            "projectName": "DB-Project-1_cdbd3914"
-        },
-        {
-            "type": "java",
-            "name": "Launch Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "DB Project 1_42adf506"
+            "projectName": "DB-Project-2"
         },
         {
             "type": "java",

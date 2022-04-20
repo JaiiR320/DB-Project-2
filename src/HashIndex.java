@@ -34,7 +34,7 @@ public class HashIndex {
                 out.add(e);
             }
         }
-        System.out.print("Hash Index equality Scan took ");
+        System.out.print("Hash Index equality scan took ");
         stop.elapsed();
         System.out.println(out.size() + " blocks were scanned");
         

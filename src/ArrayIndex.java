@@ -33,7 +33,7 @@ public class ArrayIndex {
                 out.add(e);
             }
         }
-        System.out.print("Array Index range Scan took ");
+        System.out.print("Array Index range scan took ");
         stop.elapsed();
         System.out.println(out.size() + " blocks were scanned");
 
